@@ -4,13 +4,34 @@ import sys
 
 allowed_ttys = ["ACM", "USB"]
 
+ADC_V_REF = 3.3
+ADC_BIT_RES = 12.0
+
+RES_CAL = [1e3, 1e4, 1e5, 1e7]   # Calibrating resistors
+SHUNT_RESISTOR = 4.7             # Shunt resistor value
+SWITCH_RES = 0.7                 # Analog switch value
+
+# TODO: resolution of adc should be consulted
+
 
 class Controler(object):
 
-    calib_val = []
+    calib_v_val = []
+    calib_i_val = []
+    initial_vbat = 0
 
     def __init__(self):
         self.serial_port = None
+
+    @staticmethod
+    def adc_to_v(adc_reading):
+        global ADC_BIT_RES, ADC_V_REF
+        return adc_reading*ADC_V_REF/2**ADC_BIT_RES
+
+    @staticmethod
+    def v_to_i(supply_v):
+        global ADC_BIT_RES, ADC_V_REF
+        return map(lambda x: supply_v/(x + SHUNT_RESISTOR + SWITCH_RES), RES_CAL)
 
     def calibrate(self, serial_port):
         serial_port.write(b"meas calibrate\n")
@@ -21,19 +42,23 @@ class Controler(object):
             if rx_buffer_data.decode("utf-8", "replace") == "\n":
                 data = string_serial.split(" ")
                 if data[0] == "-calibrate-":
-                    self.calib_val = data[1:6]
+                    self.initial_vbat = self.adc_to_v(int(data[1]))
+                    self.calib_v_val = map(self.adc_to_v, map(int, data[2:6]))
+                    self.calib_i_val = self.v_to_i(int(data[1]))
                     break
                 string_serial = ""
 
-    # def set_meas(self, serial_port, param, value):
-    #         serial_port.write({'meas set %s %s \n'}.format(param, value))
-    #         string_serial = ""
-    #         while True:
-    #             rx_buffer_data = serial_port.read()
-    #             string_serial += rx_buffer_data
-    #             if rx_buffer_data.decode("utf-8", "replace") == "\n":
-    #                 print (string_serial.rstrip())
-    #                 break
+    def set_meas(self, serial_port, param, value):
+        data = 'meas set %s %s \n' % (param, value)
+        my_bytes = data.encode('utf-8')
+        serial_port.write(my_bytes)
+        string_serial = ""
+        while True:
+            rx_buffer_data = serial_port.read()
+            string_serial += rx_buffer_data.decode("utf-8", "replace")
+            if rx_buffer_data.decode("utf-8", "replace") == "\n":
+                print (string_serial.rstrip())
+                break
 
 
 class SerialPort(object):
@@ -100,7 +125,6 @@ if __name__ == "__main__":
     serial_port = SerialPort()
     serial_port.serial_open(115200, SerialPort.get_serial_ports(allowed_ttys),
                             "/dev/ttyACM0")
-    # serial_port.serial_connect()
 
     string_serial = ""
 

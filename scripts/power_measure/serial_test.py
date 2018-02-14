@@ -63,10 +63,17 @@ def test_calibrate():
     controler = Controler()
     serialPort = SerialPort()
     serialPort.serial_port = mock.Mock()
+
+    fake_cal_values = "-calibrate- 1024 512 512 512 512 \n"
     serialPort.serial_port.read = mock.Mock(
-        side_effect=list("-calibrate- 1 2 3 4 5 \n".encode('utf-8', "replace"))
+        side_effect=list(fake_cal_values.encode('utf-8', "replace"))
     )
 
     controler.calibrate(serialPort.serial_port)
 
-    assert_equal(controler.calib_val, ['1', '2', '3', '4', '5'])
+    assert_equal(controler.calib_v_val, [0.4125, 0.4125, 0.4125, 0.4125])
+    assert_equal(controler.calib_i_val, [1.0185000994629003,
+                                         0.10234473384372438,
+                                         0.010239447069858229,
+                                         0.00010239994470402988])
+    assert_equal(controler.initial_vbat, 0.825)
