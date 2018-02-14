@@ -25,14 +25,20 @@
 #define MAX_SAMPLE_TIME         (1UL*US_PER_SEC)
 #define MIN_SAMPLE_TIME         (10UL)
 
-#ifdef NUCLEO_L031
+#if defined(NUCLEO_L031)
+#define MCU_ENABLE_PIN           GPIO_PIN(PORT_A,12)
+#define R1K                      GPIO_PIN(PORT_B,0)
+#define R10K                     GPIO_PIN(PORT_B,7)
+#define R100K                    GPIO_PIN(PORT_B,6)
+#define R1M                      GPIO_PIN(PORT_B,1)
+#elif defined(NUCLEO_L152)
 #define MCU_ENABLE_PIN           GPIO_PIN(PORT_A,12)
 #define R1K                      GPIO_PIN(PORT_B,0)
 #define R10K                     GPIO_PIN(PORT_B,7)
 #define R100K                    GPIO_PIN(PORT_B,6)
 #define R1M                      GPIO_PIN(PORT_B,1)
 #else
-# error "GPIO mapping for this board isn't deffined, please implement it"
+#error "GPIO mapping for this board isn't deffined, please implement it"
 #endif
 
 #define MCU_ON                   gpio_clear(MCU_ENABLE_PIN)
@@ -127,16 +133,16 @@ static void create_thread_server(void)
 static void set_sample_time(uint64_t targeted_sample_time){
     if (targeted_sample_time < MAX_SAMPLE_TIME && targeted_sample_time > MIN_SAMPLE_TIME){
         sample_time = targeted_sample_time;
-        puts("new sample time set");
+        printf("new sample time set\n");
     }
     else{
-        puts("error: invalid sample_time");
+        printf("error: invalid sample_time\n");
     }
 }
 
 static void calibrate(void)
 {
-    DEBUG("calibrate: starting calibration MCU power dsabled");
+    DEBUG("calibrate: starting calibration MCU power disabled\n");
     MCU_OFF;
 
     printf("-calibrate- ");
@@ -166,34 +172,44 @@ static void calibrate(void)
 
 
 static int adc_setup(void){
-    if (ADC_NUMOF < 2) {
+    if (ADC_NUMOF < 3) {
         DEBUG("Number of ADC lines available less than 3.\n");
         return 1;
+    }
+    for (int i = 0; i < 3; i++) {
+        if (adc_init(ADC_LINE(i)) < 0) {
+            printf("Initialization of ADC_LINE(%u) failed\n", i);
+            return 1;
+        } else {
+            printf("Successfully initialized ADC_LINE(%u)\n", i);
+        }
     }
     return 0;
 }
 
 static int set_adc_res(uint8_t targeted_adc_res){
 
+    adc_res_t res;
+
     switch (targeted_adc_res)
     {
         case 6:
-            targeted_adc_res = ADC_RES_6BIT;
+            res = ADC_RES_6BIT;
             break;
         case 8:
-            targeted_adc_res = ADC_RES_8BIT;
+            res = ADC_RES_8BIT;
             break;
         case 10:
-            targeted_adc_res = ADC_RES_10BIT;
+            res = ADC_RES_10BIT;
             break;
         case 12:
-            targeted_adc_res = ADC_RES_12BIT;
+            res = ADC_RES_12BIT;
             break;
         case 14:
-            targeted_adc_res = ADC_RES_14BIT;
+            res = ADC_RES_14BIT;
             break;
         case 16:
-            targeted_adc_res = ADC_RES_16BIT;
+            res = ADC_RES_16BIT;
             break;
         default:
             printf("measure:node unsupported adc_res \n");
@@ -212,6 +228,8 @@ static int set_adc_res(uint8_t targeted_adc_res){
         printf("measure_node: adc resolution %i\n", targeted_adc_res);
         return 0;
     }
+
+    (void) res;
 }
 
 int start_up(void){
@@ -265,11 +283,11 @@ int measure_cmd(int argc, char **argv)
             set_sample_time(atoi(argv[3]));
         }
         else {
-            puts("error: invalid command");
+            printf("error: invalid command\n");
         }
     }
     else {
-        puts("error: invalid command");
+        printf("error: invalid command\n");
     }
 
     return 0;

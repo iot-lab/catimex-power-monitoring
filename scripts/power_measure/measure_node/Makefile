@@ -16,6 +16,8 @@ USEMODULE += ps
 # If nucleo include gpio definitions
 ifeq ($(BOARD),nucleo32-l031)
 CFLAGS += -DNUCLEO_L031
+else ifeq ($(BOARD),nucleo-l152)
+CFLAGS += -DNUCLEO_L152
 endif
 
 
