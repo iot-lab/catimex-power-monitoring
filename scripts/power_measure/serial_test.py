@@ -59,21 +59,26 @@ def test_serial_conection():
         assert_equal(True, serialPort.serial_connect())
 
 
+def test_high_range_currents():
+    current_value = Controler.adc_to_i(2**12*1.1, 0.75*2**12)
+    assert_equal(current_value, 12)
+
+
 def test_calibrate():
     controler = Controler()
     serialPort = SerialPort()
     serialPort.serial_port = mock.Mock()
 
-    fake_cal_values = "-calibrate- 1024 512 512 512 512 \n"
+    fake_cal_values = "-calibrate- 1024 512 512 512 712 \n"
     serialPort.serial_port.read = mock.Mock(
         side_effect=list(fake_cal_values.encode('utf-8', "replace"))
     )
 
     controler.calibrate(serialPort.serial_port)
 
-    assert_equal(controler.calib_v_val, [0.4125, 0.4125, 0.4125, 0.4125])
-    assert_equal(controler.calib_i_val, [1.0185000994629003,
-                                         0.10234473384372438,
-                                         0.010239447069858229,
-                                         0.00010239994470402988])
-    assert_equal(controler.initial_vbat, 0.825)
+    assert_equal(controler.calib_v_val, [0.825, 0.4125, 0.4125, 0.4125])
+    assert_equal(controler.calib_i_val, [0.7081758504077978,
+                                         0.07116157275071461,
+                                         0.007119615540760799,
+                                         7.119996155202077e-05])
+    assert_equal(controler.initial_vbat, 0.5736328125)
