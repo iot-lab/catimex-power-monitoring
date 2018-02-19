@@ -6,16 +6,18 @@ import numpy
 
 allowed_ttys = ["ACM", "USB"]
 
+MAX_CURRENT = 0.1
+
 ADC_V_REF = 3.3
 ADC_BIT_RES = 12.0
 
-RES_CAL = [1e3, 1e4, 1e5, 1e7]   # Calibrating resistors
+RES_CAL = [1e3, 1e4, 1e5, 1e6]   # Calibrating resistors
 SHUNT_RESISTOR = 4.7             # Shunt resistor value
 SWITCH_RES = 0.7                 # Analog switch value
 
 LOW_CURRENT_GAIN = 197
 HIGH_CURRENT_GAIN = 1.51
-FIRST_STAGE_GAIN = 100
+FIRST_STAGE_GAIN = 10
 SUPPLY_STAGE_GAIN = 0.5
 
 # TODO: resolution of adc should be consulted
@@ -41,19 +43,26 @@ class Controler(object):
         return map(lambda x: supply_v/(x + SHUNT_RESISTOR + SWITCH_RES), RES_CAL)
 
     @staticmethod
-    def adc_to_i(low_range, high_range):
+    def adc_suply_to_v(bat_voltage):
+        return Controler.adc_to_v(bat_voltage)*SUPPLY_STAGE_GAIN
+
+    @staticmethod
+    def parse_data(pattern, data):
+        data = data.split(" ")
+        if data[0] == pattern:
+            return data[1:]
+
+    def adc_to_i(self, low_range, high_range):
         low_range = Controler.adc_to_v(low_range)
         high_range = Controler.adc_to_v(high_range)
         if low_range > ADC_V_REF and high_range > ADC_V_REF:
-            return 0.1
+            return MAX_CURRENT
         elif low_range > ADC_V_REF:
-            return HIGH_CURRENT_GAIN*FIRST_STAGE_GAIN*high_range/SHUNT_RESISTOR
+            return high_range/HIGH_CURRENT_GAIN/FIRST_STAGE_GAIN/SHUNT_RESISTOR
         else:
-            return numpy.interp(low_range, Controler.calib_v_val, Controler.calib_i_val)
-
-    @staticmethod
-    def adc_supllu_to_v(bat_voltage):
-        return Controler.adc_to_v(bat_voltage)*SUPPLY_STAGE_GAIN
+            return numpy.interp(low_range,
+                                numpy.flip(self.calib_v_val, 0),
+                                numpy.flip(self.calib_i_val, 0))
 
     def stop_measuring(self, serial_port):
         serial_port.write(b"meas stop\n")
@@ -69,8 +78,8 @@ class Controler(object):
                 data = string_serial.split(" ")
                 if data[0] == "-calibrate-":
                     self.initial_vbat = self.adc_to_v(int(data[5]))
-                    self.calib_v_val = map(self.adc_to_v, map(int, data[1:5]))
-                    self.calib_i_val = self.cal_v_to_i(int(data[5]))
+                    self.calib_v_val = list(map(self.adc_to_v, map(int, data[1:5])))
+                    self.calib_i_val = list(self.cal_v_to_i(int(data[5])))
                     break
                 string_serial = ""
 
@@ -97,8 +106,12 @@ class Controler(object):
                 string_serial += rx_buffer_data.decode("utf-8", "replace")
 
                 if rx_buffer_data.decode("utf-8", "replace") is "\n":
-                    timestamp = "{:%Y-%m-%d_%H:%M:%S.%f}".format(datetime.datetime.now())
-                    print (timestamp + " " + string_serial.rstrip())
+                    measurements = self.parse_data('-data-', string_serial)
+                    if(measurements):
+                        voltage = Controler.adc_suply_to_v(int(measurements[0]))
+                        current = self.adc_to_i(int(measurements[1]), int(measurements[2]))
+                        timestamp = "{:%Y-%m-%d_%H:%M:%S.%f}".format(datetime.datetime.now())
+                        print (timestamp + " " + str(voltage) + " " + str(current))
                     string_serial = ""
 
             except (KeyboardInterrupt, SystemExit):
@@ -175,16 +188,3 @@ if __name__ == "__main__":
 
     controler.calibrate(serial_port.serial_port)
     controler.start_measuring(serial_port.serial_port)
-
-    while True:
-        try:
-            rx_buffer_data = serial_port.serial_port.read(1)
-            string_serial += rx_buffer_data.decode("utf-8", "replace")
-
-            if rx_buffer_data.decode("utf-8", "replace") is "\n":
-                print (string_serial.rstrip())
-                string_serial = ""
-
-        except (KeyboardInterrupt, SystemExit):
-            serial_port.serial_port.close()
-            raise
