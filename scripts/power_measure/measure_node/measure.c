@@ -217,7 +217,7 @@ static int set_adc_res(uint8_t targeted_adc_res){
             break;
     }
 
-    int sample = adc_sample(ADC_LINE(0), targeted_adc_res);
+    int sample = adc_sample(ADC_LINE(0), res);
 
     if (sample < 0) {
         printf("measure_node: adc resolution  %i not applicable\n", targeted_adc_res);
@@ -226,6 +226,7 @@ static int set_adc_res(uint8_t targeted_adc_res){
     else
     {
         printf("measure_node: adc resolution %i\n", targeted_adc_res);
+        adc_res = res;
         return 0;
     }
 
