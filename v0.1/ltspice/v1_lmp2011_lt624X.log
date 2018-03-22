@@ -1,0 +1,59 @@
+Circuit: * Z:\home\francisco\Workspace\catimex\current-meas\ltspice\v1_lmp2011_lt624X.asc
+
+Instance "m:u1:70": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u1:69": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u1:67": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u1:66": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u1:65": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u1:64": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u1:68": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u1:63": Length shorter than recommended for a level 1 MOSFET.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+vernier = 0.5
+vernier = 0.666667
+Gmin = 0.402032
+vernier = 0.888888
+vernier = 1
+Gmin = 0.0567082
+Gmin = 0.006089
+Gmin = 0.000653801
+Gmin = 7.02013e-005
+Gmin = 7.53781e-006
+Gmin = 8.09366e-007
+Gmin = 8.6905e-008
+vernier = 0.5
+Gmin = 2.22226e-008
+vernier = 0.666667
+vernier = 0.888888
+Gmin = 4.29053e-009
+vernier = 1
+Gmin = 4.92823e-010
+Gmin = 5.29164e-011
+Gmin = 5.68186e-012
+Gmin = 6.10085e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Mon Mar 19 15:16:44 2018
+Total elapsed time: 0.101 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 1054
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 120
+fillins = 129
+solver = Normal
+Thread vector: 21.4/15.5[4] 0.0/0.0[0] 5.6/2.9[4] 0.8/1.5[1]  2592/500
+Matrix Compiler1:     651 opcodes  2.8/1.7/[0.9]
+Matrix Compiler2: 12.17 KB object code size  1.7/1.9/[1.1]
+
+

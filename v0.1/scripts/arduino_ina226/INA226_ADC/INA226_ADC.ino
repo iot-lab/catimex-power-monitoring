@@ -1,15 +1,13 @@
 /*
-  This scripts allows usage of INA226's shunt resistor voltage measurement ADC for any
-  high resolution voltage measurement application thanks to its high bit range (16 bit),
-  from -81.9175 to 81.92 mV fixed (according to datasheet).
-
-  It is assumed that INA226 doesn't have any shunt resistor connected to IN+ and IN- inputs.
-
-  INA226 library by Korneliusz J.
+    INA226 Bi-directional Current/Power Monitor. Simple Example.
+    Read more: http://www.jarzebski.pl/arduino/czujniki-i-sensory/cyfrowy-czujnik-pradu-mocy-ina226.html
+    GIT: https://github.com/jarzebski/Arduino-INA226
+    Web: http://www.jarzebski.pl
+    (c) 2014 by Korneliusz Jarzebski
 */
 
 #include <Wire.h>
-#include <INA226.h>
+#include "INA226.h"
 
 INA226 ina;
 
@@ -28,7 +26,7 @@ void checkConfig()
     case INA226_MODE_SHUNT_BUS_CONT:  Serial.println("Shunt and Bus, Continuous"); break;
     default: Serial.println("unknown");
   }
-
+  
   Serial.print("Samples average:       ");
   switch (ina.getAverages())
   {
@@ -70,7 +68,7 @@ void checkConfig()
     case INA226_SHUNT_CONV_TIME_8244US: Serial.println("8.244ms"); break;
     default: Serial.println("unknown");
   }
-
+  
   Serial.print("Max possible current:  ");
   Serial.print(ina.getMaxPossibleCurrent());
   Serial.println(" A");
@@ -88,7 +86,7 @@ void checkConfig()
   Serial.println(" W");
 }
 
-void setup()
+void setup() 
 {
   Serial.begin(115200);
 
@@ -99,10 +97,10 @@ void setup()
   ina.begin();
 
   // Configure INA226
-  ina.configure(INA226_AVERAGES_256, INA226_BUS_CONV_TIME_140US, INA226_SHUNT_CONV_TIME_140US, INA226_MODE_SHUNT_BUS_CONT);
+  ina.configure(INA226_AVERAGES_4, INA226_BUS_CONV_TIME_1100US, INA226_SHUNT_CONV_TIME_140US, INA226_MODE_SHUNT_BUS_CONT);
 
-  // Calibrate INA226. Rshunt = 0.1 ohm, Max excepted current = 1A
-  ina.calibrate(0.1, 1);
+  // Calibrate INA226. Rshunt = 0.01 ohm, Max excepted current = 4A
+  ina.calibrate(1.5, 0.05);
 
   // Display configuration
   checkConfig();
@@ -112,13 +110,22 @@ void setup()
 
 void loop()
 {
-  Serial.print("BUS VOLTAGE:   ");
+  Serial.print("Bus voltage:   ");
   Serial.print(ina.readBusVoltage(), 5);
   Serial.println(" V");
 
-  Serial.print("SHUNT VOLTAGE: ");
-  Serial.print(ina.readShuntVoltage()*1000+2.5/1000000.0, 5);
-  Serial.println(" mV");
+  Serial.print("Bus power:     ");
+  Serial.print(ina.readBusPower(), 5);
+  Serial.println(" W");
+
+
+  Serial.print("Shunt voltage: ");
+  Serial.print(ina.readShuntVoltage(), 5);
+  Serial.println(" V");
+
+  Serial.print("Shunt current: ");
+  Serial.print(ina.readShuntCurrent(), 5);
+  Serial.println(" A");
 
   Serial.println("");
   delay(1000);

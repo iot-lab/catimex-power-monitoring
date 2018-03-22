@@ -2,7 +2,7 @@ APPLICATION = measure_node
 
 BOARD ?= nucleo32-l031
 
-RIOTBASE=$(CURDIR)/../../../../RIOT
+RIOTBASE=$(CURDIR)/../../../../../RIOT
 
 FEATURES_REQUIRED = periph_adc
 
