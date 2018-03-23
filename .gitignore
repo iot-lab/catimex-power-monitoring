@@ -18,6 +18,10 @@ eagle.epf
 *.pro
 *.job
 
+# ltspice
+*.log
+*.raw
+
 # CAM files
 *.$$$
 *.cmp
