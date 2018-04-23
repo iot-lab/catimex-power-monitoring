@@ -10162,6 +10162,18 @@ Source: www.kingbright.com</description>
 <label x="15.24" y="40.64" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="DATA+" class="0">
+<segment>
+<pinref part="MCU" gate="G$1" pin="D+"/>
+<wire x1="154.94" y1="-86.36" x2="160.02" y2="-86.36" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="DATA-" class="0">
+<segment>
+<pinref part="MCU" gate="G$1" pin="D-"/>
+<wire x1="160.02" y1="-88.9" x2="154.94" y2="-88.9" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -10977,14 +10989,14 @@ Source: www.kingbright.com</description>
 <pinref part="TS5A4624" gate="A" pin="NO"/>
 </segment>
 </net>
-<net name="D-" class="0">
+<net name="DATA-" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="D-"/>
 <wire x1="363.22" y1="-93.98" x2="350.52" y2="-93.98" width="0.1524" layer="91"/>
 <label x="350.52" y="-93.98" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D+" class="0">
+<net name="DATA+" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="D+"/>
 <wire x1="363.22" y1="-91.44" x2="350.52" y2="-91.44" width="0.1524" layer="91"/>
