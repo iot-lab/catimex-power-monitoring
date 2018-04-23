@@ -9,44 +9,44 @@
 <grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
-<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
-<layer number="32" name="bCream" color="7" fill="5" visible="yes" active="yes"/>
-<layer number="33" name="tFinish" color="6" fill="3" visible="yes" active="yes"/>
-<layer number="34" name="bFinish" color="6" fill="6" visible="yes" active="yes"/>
-<layer number="35" name="tGlue" color="7" fill="4" visible="yes" active="yes"/>
-<layer number="36" name="bGlue" color="7" fill="5" visible="yes" active="yes"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
-<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
-<layer number="44" name="Drills" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="yes"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
-<layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="88" name="SimResults" color="9" fill="1" visible="no" active="yes"/>
+<layer number="89" name="SimProbes" color="9" fill="1" visible="no" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="no" active="no"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="no" active="no"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="no" active="no"/>
@@ -66,36 +66,36 @@
 <wire x1="0" y1="59.8" x2="0" y2="0" width="0" layer="20"/>
 <dimension x1="-2.6" y1="59.6" x2="-2.6" y2="0" x3="-9.2" y3="29.8" textsize="1.778" layer="48"/>
 <dimension x1="0" y1="-0.6" x2="72.4" y2="-0.6" x3="36.2" y3="-7" textsize="1.778" layer="48"/>
-<text x="70.2" y="14.6" size="0.6096" layer="48" rot="R90">ALT</text>
-<text x="70.2" y="11.8" size="0.6096" layer="48" rot="R90">SDA</text>
-<text x="70.2" y="9.4" size="0.6096" layer="48" rot="R90">SCL</text>
-<text x="70.2" y="6.8" size="0.6096" layer="48" rot="R90">ADC</text>
-<text x="59.6" y="57.2" size="0.6096" layer="48">SW0</text>
-<text x="62.2" y="58" size="0.6096" layer="48">SW</text>
-<text x="61.8" y="57.2" size="0.6096" layer="48">PWR</text>
-<text x="48" y="57.4" size="0.6096" layer="48">GND</text>
-<text x="2.8" y="57.6" size="0.6096" layer="48">GND</text>
-<text x="8" y="57.6" size="0.6096" layer="48">GND</text>
-<text x="11" y="57.6" size="0.6096" layer="48">5V</text>
-<text x="5.4" y="57.6" size="0.6096" layer="48">VEXT</text>
-<text x="50.4" y="57.4" size="0.6096" layer="48">VMCU</text>
-<text x="42.6" y="57.4" size="0.6096" layer="48">SW1</text>
-<text x="40" y="57.4" size="0.6096" layer="48">SW2</text>
-<text x="37.6" y="57.4" size="0.6096" layer="48">SW3</text>
-<text x="35" y="57.4" size="0.6096" layer="48">SW4</text>
-<text x="1.4" y="27.4" size="0.6096" layer="48" rot="R90">5V</text>
-<text x="1.4" y="29" size="0.6096" layer="48" rot="R90">5V_R</text>
-<text x="1.4" y="24.4" size="0.6096" layer="48" rot="R90">5V_F</text>
-<text x="16" y="5.4" size="0.6096" layer="48">5V_F</text>
-<text x="19.6" y="5.4" size="0.6096" layer="48">5.5V</text>
-<text x="23.2" y="5.4" size="0.6096" layer="48">5V_R</text>
-<text x="29.2" y="5.4" size="0.6096" layer="48">VIN</text>
-<text x="32.4" y="5.4" size="0.6096" layer="48">VOUT</text>
-<text x="35.8" y="5.4" size="0.6096" layer="48">SHUNT+</text>
-<text x="39.8" y="5.4" size="0.6096" layer="48">SHUNT-</text>
-<text x="51.8" y="5.2" size="0.6096" layer="48">S1_OUT</text>
-<text x="60.8" y="5.2" size="0.6096" layer="48">S2_OUT</text>
-<text x="55.8" y="5.2" size="0.6096" layer="48">S1_OUT_F</text>
+<text x="70.2" y="14.6" size="0.6096" layer="25" rot="R90">ALT</text>
+<text x="70.2" y="11.8" size="0.6096" layer="25" rot="R90">SDA</text>
+<text x="70.2" y="9.4" size="0.6096" layer="25" rot="R90">SCL</text>
+<text x="70.2" y="6.8" size="0.6096" layer="25" rot="R90">ADC</text>
+<text x="59.6" y="57.2" size="0.6096" layer="25">SW0</text>
+<text x="62.2" y="58" size="0.6096" layer="25">SW</text>
+<text x="61.8" y="57.2" size="0.6096" layer="25">PWR</text>
+<text x="48" y="57.4" size="0.6096" layer="25">GND</text>
+<text x="2.8" y="57.6" size="0.6096" layer="25">GND</text>
+<text x="8" y="57.6" size="0.6096" layer="25">GND</text>
+<text x="11" y="57.6" size="0.6096" layer="25">5V</text>
+<text x="5.4" y="57.6" size="0.6096" layer="25">VEXT</text>
+<text x="50.4" y="57.4" size="0.6096" layer="25">VMCU</text>
+<text x="42.6" y="57.4" size="0.6096" layer="25">SW1</text>
+<text x="40" y="57.4" size="0.6096" layer="25">SW2</text>
+<text x="37.6" y="57.4" size="0.6096" layer="25">SW3</text>
+<text x="35" y="57.4" size="0.6096" layer="25">SW4</text>
+<text x="1.4" y="27.4" size="0.6096" layer="25" rot="R90">5V</text>
+<text x="1.4" y="29" size="0.6096" layer="25" rot="R90">5V_R</text>
+<text x="1.4" y="24.4" size="0.6096" layer="25" rot="R90">5V_F</text>
+<text x="16" y="5.4" size="0.6096" layer="25">5V_F</text>
+<text x="19.6" y="5.4" size="0.6096" layer="25">5.5V</text>
+<text x="23.2" y="5.4" size="0.6096" layer="25">5V_R</text>
+<text x="29.2" y="5.4" size="0.6096" layer="25">VIN</text>
+<text x="32.4" y="5.4" size="0.6096" layer="25">VOUT</text>
+<text x="35.8" y="5.4" size="0.6096" layer="25">SHUNT+</text>
+<text x="39.8" y="5.4" size="0.6096" layer="25">SHUNT-</text>
+<text x="51.8" y="5.2" size="0.6096" layer="25">S1_OUT</text>
+<text x="60.8" y="5.2" size="0.6096" layer="25">S2_OUT</text>
+<text x="55.8" y="5.2" size="0.6096" layer="25">S1_OUT_F</text>
 <text x="53.8" y="23.2" size="1.9304" layer="52" rot="MR0">Current Measurement Board</text>
 <text x="44.4" y="19.6" size="1.9304" layer="52" rot="MR0">V0.2 ltc6102</text>
 </plain>
