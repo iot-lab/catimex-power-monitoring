@@ -9296,8 +9296,8 @@ Source: www.kingbright.com</description>
 <part name="GND26" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C18" library="SparkFun-Capacitors" deviceset="10UF" device="-0603-6.3V-20%" value="10u"/>
 <part name="GND27" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="MCU_VUSB" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0603" package3d_urn="urn:adsk.eagle:package:15822/2"/>
-<part name="VMCU_EXT" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0603" package3d_urn="urn:adsk.eagle:package:15822/2"/>
+<part name="VUSB" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0603" package3d_urn="urn:adsk.eagle:package:15822/2"/>
+<part name="VEXT" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0603" package3d_urn="urn:adsk.eagle:package:15822/2"/>
 <part name="TS5A4624" library="texas_instruments" deviceset="TS5A4624DCKR" device="DCK6-M"/>
 <part name="SUPPLY21" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="DGND" device=""/>
 <part name="SUPPLY22" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="DGND" device=""/>
@@ -9324,8 +9324,8 @@ Source: www.kingbright.com</description>
 <part name="SPLY-EXT" library="SparkFun-Connectors" deviceset="CONN_02" device=""/>
 <part name="GND37" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="TS5A3159" library="texas_instruments" deviceset="TS5A3159ADBVR" device="DBV6-M"/>
-<part name="VCALIB_LED" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0603" package3d_urn="urn:adsk.eagle:package:15822/2"/>
-<part name="VMCU_LED" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0603" package3d_urn="urn:adsk.eagle:package:15822/2"/>
+<part name="CALIB" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0603" package3d_urn="urn:adsk.eagle:package:15822/2"/>
+<part name="VMCU" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_0603" package3d_urn="urn:adsk.eagle:package:15822/2"/>
 <part name="SUPPLY12" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="DGND" device=""/>
 <part name="SUPPLY13" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="DGND" device=""/>
 <part name="SUPPLY14" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="DGND" device=""/>
@@ -9356,11 +9356,11 @@ Source: www.kingbright.com</description>
 <part name="ADC" library="SparkFun-Connectors" deviceset="CONN_03" device="" value="455-1750-1-ND"/>
 <part name="GND39" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="TP1" library="SparkFun-Connectors" deviceset="TEST-POINT" device="3"/>
-<part name="MCU" library="SparkFun-Connectors" deviceset="USB_A" device="_SMT_FEMALE"/>
+<part name="USB-OUT" library="SparkFun-Connectors" deviceset="USB_A" device="_SMT_FEMALE"/>
 <part name="SUPPLY16" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VSS" device=""/>
 <part name="GND33" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="TP2" library="SparkFun-Connectors" deviceset="TEST-POINT" device="3"/>
-<part name="J1" library="10118194-0001LF" deviceset="10118194-0001LF" device=""/>
+<part name="USB-IN" library="10118194-0001LF" deviceset="10118194-0001LF" device=""/>
 <part name="SUPPLY15" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="DGND" device=""/>
 <part name="C24" library="SparkFun-Capacitors" deviceset="10UF" device="-0603-6.3V-20%" value="100n"/>
 <part name="GND21" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -9371,8 +9371,8 @@ Source: www.kingbright.com</description>
 <part name="P-5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="-12V" device=""/>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 <part name="P-6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="-12V" device=""/>
-<part name="J2" library="SparkFun-Connectors" deviceset="CONN_06" device="LONGPADS"/>
-<part name="J3" library="SparkFun-Connectors" deviceset="CONN_04" device=""/>
+<part name="SWITCH" library="SparkFun-Connectors" deviceset="CONN_06" device="LONGPADS"/>
+<part name="POWER" library="SparkFun-Connectors" deviceset="CONN_04" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9429,8 +9429,8 @@ Source: www.kingbright.com</description>
 <instance part="P+6" gate="1" x="154.94" y="-17.78"/>
 <instance part="P-2" gate="1" x="160.02" y="-17.78" rot="R180"/>
 <instance part="TS5A3159" gate="A" x="363.22" y="-58.42" rot="MR0"/>
-<instance part="VCALIB_LED" gate="G$1" x="363.22" y="-68.58"/>
-<instance part="VMCU_LED" gate="G$1" x="391.16" y="-68.58"/>
+<instance part="CALIB" gate="G$1" x="363.22" y="-68.58"/>
+<instance part="VMCU" gate="G$1" x="391.16" y="-68.58"/>
 <instance part="SUPPLY12" gate="G$1" x="363.22" y="-93.98"/>
 <instance part="SUPPLY13" gate="G$1" x="381" y="-93.98"/>
 <instance part="SUPPLY14" gate="G$1" x="391.16" y="-93.98"/>
@@ -9462,7 +9462,7 @@ Source: www.kingbright.com</description>
 <instance part="ADC" gate="J$1" x="144.78" y="-60.96"/>
 <instance part="GND39" gate="1" x="160.02" y="-66.04"/>
 <instance part="TP1" gate="G$1" x="50.8" y="48.26"/>
-<instance part="MCU" gate="G$1" x="147.32" y="-86.36" rot="R180"/>
+<instance part="USB-OUT" gate="G$1" x="147.32" y="-86.36" rot="R180"/>
 <instance part="SUPPLY16" gate="G$1" x="162.56" y="-91.44" rot="R90"/>
 <instance part="GND33" gate="1" x="165.1" y="-83.82" rot="R90"/>
 <instance part="TP2" gate="G$1" x="157.48" y="-91.44" rot="R270"/>
@@ -9473,8 +9473,8 @@ Source: www.kingbright.com</description>
 <instance part="P-5" gate="1" x="83.82" y="-106.68" rot="R180"/>
 <instance part="P+4" gate="1" x="-45.72" y="-15.24"/>
 <instance part="P-6" gate="1" x="22.86" y="-40.64" rot="R180"/>
-<instance part="J2" gate="G$1" x="482.6" y="-40.64" rot="R180"/>
-<instance part="J3" gate="G$1" x="147.32" y="-38.1"/>
+<instance part="SWITCH" gate="G$1" x="482.6" y="-40.64" rot="R180"/>
+<instance part="POWER" gate="G$1" x="147.32" y="-38.1"/>
 </instances>
 <busses>
 </busses>
@@ -9534,7 +9534,7 @@ Source: www.kingbright.com</description>
 <segment>
 <wire x1="152.4" y1="-40.64" x2="154.94" y2="-40.64" width="0.1524" layer="91"/>
 <pinref part="GND20" gate="1" pin="GND"/>
-<pinref part="J3" gate="G$1" pin="1"/>
+<pinref part="POWER" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="R36" gate="G$1" pin="1"/>
@@ -9548,7 +9548,7 @@ Source: www.kingbright.com</description>
 <pinref part="GND39" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="MCU" gate="G$1" pin="GND"/>
+<pinref part="USB-OUT" gate="G$1" pin="GND"/>
 <pinref part="GND33" gate="1" pin="GND"/>
 <wire x1="154.94" y1="-83.82" x2="162.56" y2="-83.82" width="0.1524" layer="91"/>
 </segment>
@@ -9606,14 +9606,14 @@ Source: www.kingbright.com</description>
 </segment>
 <segment>
 <pinref part="TS5A3159" gate="A" pin="NO"/>
-<pinref part="VMCU_LED" gate="G$1" pin="A"/>
+<pinref part="VMCU" gate="G$1" pin="A"/>
 <wire x1="360.68" y1="-58.42" x2="391.16" y2="-58.42" width="0.1524" layer="91"/>
 <wire x1="391.16" y1="-66.04" x2="391.16" y2="-58.42" width="0.1524" layer="91"/>
 <pinref part="SUPPLY25" gate="G$1" pin="VSS"/>
 <junction x="391.16" y="-58.42"/>
 </segment>
 <segment>
-<pinref part="MCU" gate="G$1" pin="VBUS"/>
+<pinref part="USB-OUT" gate="G$1" pin="VBUS"/>
 <pinref part="SUPPLY16" gate="G$1" pin="VSS"/>
 <wire x1="154.94" y1="-91.44" x2="157.48" y2="-91.44" width="0.1524" layer="91"/>
 <pinref part="TP2" gate="G$1" pin="1"/>
@@ -9632,7 +9632,7 @@ Source: www.kingbright.com</description>
 <wire x1="152.4" y1="-33.02" x2="154.94" y2="-33.02" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="-20.32" x2="154.94" y2="-33.02" width="0.1524" layer="91"/>
 <pinref part="P+6" gate="1" pin="+12V"/>
-<pinref part="J3" gate="G$1" pin="4"/>
+<pinref part="POWER" gate="G$1" pin="4"/>
 </segment>
 <segment>
 <pinref part="C4" gate="G$1" pin="1"/>
@@ -9663,7 +9663,7 @@ Source: www.kingbright.com</description>
 <wire x1="152.4" y1="-35.56" x2="160.02" y2="-35.56" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="-35.56" x2="160.02" y2="-20.32" width="0.1524" layer="91"/>
 <pinref part="P-2" gate="1" pin="-12V"/>
-<pinref part="J3" gate="G$1" pin="3"/>
+<pinref part="POWER" gate="G$1" pin="3"/>
 </segment>
 <segment>
 <pinref part="C6" gate="G$1" pin="1"/>
@@ -9691,7 +9691,7 @@ Source: www.kingbright.com</description>
 <wire x1="152.4" y1="-38.1" x2="172.72" y2="-38.1" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="-38.1" x2="172.72" y2="-27.94" width="0.1524" layer="91"/>
 <label x="172.72" y="-27.94" size="1.778" layer="95" rot="R90" xref="yes"/>
-<pinref part="J3" gate="G$1" pin="2"/>
+<pinref part="POWER" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="VOUT" class="0">
@@ -9720,7 +9720,7 @@ Source: www.kingbright.com</description>
 <wire x1="439.42" y1="-50.8" x2="439.42" y2="-40.64" width="0.1524" layer="91"/>
 <junction x="439.42" y="-40.64"/>
 <pinref part="R53" gate="G$1" pin="2"/>
-<pinref part="J2" gate="G$1" pin="3"/>
+<pinref part="SWITCH" gate="G$1" pin="3"/>
 </segment>
 </net>
 <net name="V_CALIB" class="0">
@@ -9728,7 +9728,7 @@ Source: www.kingbright.com</description>
 <pinref part="TS5A3159" gate="A" pin="NC"/>
 <wire x1="360.68" y1="-63.5" x2="363.22" y2="-63.5" width="0.1524" layer="91"/>
 <label x="368.3" y="-63.5" size="1.778" layer="95"/>
-<pinref part="VCALIB_LED" gate="G$1" pin="A"/>
+<pinref part="CALIB" gate="G$1" pin="A"/>
 <wire x1="363.22" y1="-63.5" x2="368.3" y2="-63.5" width="0.1524" layer="91"/>
 <wire x1="363.22" y1="-66.04" x2="363.22" y2="-63.5" width="0.1524" layer="91"/>
 <junction x="363.22" y="-63.5"/>
@@ -9767,7 +9767,7 @@ Source: www.kingbright.com</description>
 <wire x1="447.04" y1="-50.8" x2="447.04" y2="-43.18" width="0.1524" layer="91"/>
 <junction x="447.04" y="-43.18"/>
 <pinref part="R31" gate="G$1" pin="2"/>
-<pinref part="J2" gate="G$1" pin="4"/>
+<pinref part="SWITCH" gate="G$1" pin="4"/>
 </segment>
 </net>
 <net name="SW_CTRL_3" class="0">
@@ -9783,7 +9783,7 @@ Source: www.kingbright.com</description>
 <wire x1="454.66" y1="-50.8" x2="454.66" y2="-45.72" width="0.1524" layer="91"/>
 <junction x="454.66" y="-45.72"/>
 <pinref part="R32" gate="G$1" pin="2"/>
-<pinref part="J2" gate="G$1" pin="5"/>
+<pinref part="SWITCH" gate="G$1" pin="5"/>
 </segment>
 </net>
 <net name="SW_CTRL_4" class="0">
@@ -9799,7 +9799,7 @@ Source: www.kingbright.com</description>
 <wire x1="462.28" y1="-50.8" x2="462.28" y2="-48.26" width="0.1524" layer="91"/>
 <junction x="462.28" y="-48.26"/>
 <pinref part="R35" gate="G$1" pin="2"/>
-<pinref part="J2" gate="G$1" pin="6"/>
+<pinref part="SWITCH" gate="G$1" pin="6"/>
 </segment>
 </net>
 <net name="N$30" class="0">
@@ -9847,19 +9847,19 @@ Source: www.kingbright.com</description>
 <wire x1="431.8" y1="-50.8" x2="431.8" y2="-38.1" width="0.1524" layer="91"/>
 <junction x="431.8" y="-38.1"/>
 <pinref part="R52" gate="G$1" pin="2"/>
-<pinref part="J2" gate="G$1" pin="2"/>
+<pinref part="SWITCH" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$23" class="0">
 <segment>
-<pinref part="VCALIB_LED" gate="G$1" pin="C"/>
+<pinref part="CALIB" gate="G$1" pin="C"/>
 <wire x1="363.22" y1="-73.66" x2="363.22" y2="-76.2" width="0.1524" layer="91"/>
 <pinref part="R45" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$24" class="0">
 <segment>
-<pinref part="VMCU_LED" gate="G$1" pin="C"/>
+<pinref part="VMCU" gate="G$1" pin="C"/>
 <wire x1="391.16" y1="-73.66" x2="391.16" y2="-76.2" width="0.1524" layer="91"/>
 <pinref part="R46" gate="G$1" pin="2"/>
 </segment>
@@ -9872,7 +9872,7 @@ Source: www.kingbright.com</description>
 <junction x="424.18" y="-35.56"/>
 <label x="408.94" y="-35.56" size="1.778" layer="95"/>
 <pinref part="R51" gate="G$1" pin="2"/>
-<pinref part="J2" gate="G$1" pin="1"/>
+<pinref part="SWITCH" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="DGND" class="0">
@@ -10164,13 +10164,13 @@ Source: www.kingbright.com</description>
 </net>
 <net name="DATA+" class="0">
 <segment>
-<pinref part="MCU" gate="G$1" pin="D+"/>
+<pinref part="USB-OUT" gate="G$1" pin="D+"/>
 <wire x1="154.94" y1="-86.36" x2="160.02" y2="-86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="DATA-" class="0">
 <segment>
-<pinref part="MCU" gate="G$1" pin="D-"/>
+<pinref part="USB-OUT" gate="G$1" pin="D-"/>
 <wire x1="160.02" y1="-88.9" x2="154.94" y2="-88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -10236,8 +10236,8 @@ Source: www.kingbright.com</description>
 <instance part="GND26" gate="1" x="431.8" y="-7.62"/>
 <instance part="C18" gate="G$1" x="416.56" y="-58.42"/>
 <instance part="GND27" gate="1" x="416.56" y="-63.5"/>
-<instance part="MCU_VUSB" gate="G$1" x="317.5" y="-91.44"/>
-<instance part="VMCU_EXT" gate="G$1" x="335.28" y="-91.44"/>
+<instance part="VUSB" gate="G$1" x="317.5" y="-91.44"/>
+<instance part="VEXT" gate="G$1" x="335.28" y="-91.44"/>
 <instance part="TS5A4624" gate="A" x="261.62" y="-73.66"/>
 <instance part="SUPPLY21" gate="G$1" x="261.62" y="-109.22"/>
 <instance part="SUPPLY22" gate="G$1" x="317.5" y="-109.22"/>
@@ -10263,7 +10263,7 @@ Source: www.kingbright.com</description>
 <instance part="GND36" gate="1" x="431.8" y="-99.06"/>
 <instance part="SPLY-EXT" gate="G$1" x="350.52" y="-50.8"/>
 <instance part="GND37" gate="1" x="363.22" y="-53.34"/>
-<instance part="J1" gate="G$1" x="375.92" y="-93.98"/>
+<instance part="USB-IN" gate="G$1" x="375.92" y="-93.98"/>
 <instance part="SUPPLY15" gate="G$1" x="396.24" y="-99.06"/>
 <instance part="C24" gate="G$1" x="441.96" y="-93.98"/>
 <instance part="GND21" gate="1" x="441.96" y="-99.06"/>
@@ -10742,7 +10742,7 @@ Source: www.kingbright.com</description>
 <pinref part="TS5A4624" gate="A" pin="NC"/>
 <wire x1="314.96" y1="-78.74" x2="317.5" y2="-78.74" width="0.1524" layer="91"/>
 <label x="317.5" y="-78.74" size="1.778" layer="95"/>
-<pinref part="MCU_VUSB" gate="G$1" pin="A"/>
+<pinref part="VUSB" gate="G$1" pin="A"/>
 <wire x1="317.5" y1="-88.9" x2="317.5" y2="-78.74" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -10862,7 +10862,7 @@ Source: www.kingbright.com</description>
 <pinref part="R34" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="GND"/>
+<pinref part="USB-IN" gate="G$1" pin="GND"/>
 <wire x1="388.62" y1="-96.52" x2="396.24" y2="-96.52" width="0.1524" layer="91"/>
 <label x="396.24" y="-96.52" size="1.778" layer="95"/>
 <pinref part="SUPPLY15" gate="G$1" pin="DGND"/>
@@ -10951,13 +10951,13 @@ Source: www.kingbright.com</description>
 </net>
 <net name="N$12" class="0">
 <segment>
-<pinref part="MCU_VUSB" gate="G$1" pin="C"/>
+<pinref part="VUSB" gate="G$1" pin="C"/>
 <pinref part="R33" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$19" class="0">
 <segment>
-<pinref part="VMCU_EXT" gate="G$1" pin="C"/>
+<pinref part="VEXT" gate="G$1" pin="C"/>
 <pinref part="R34" gate="G$1" pin="1"/>
 </segment>
 </net>
@@ -10970,7 +10970,7 @@ Source: www.kingbright.com</description>
 <label x="416.56" y="-86.36" size="1.27" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="VDD"/>
+<pinref part="USB-IN" gate="G$1" pin="VDD"/>
 <label x="396.24" y="-91.44" size="1.778" layer="95"/>
 <wire x1="388.62" y1="-91.44" x2="398.78" y2="-91.44" width="0.1524" layer="91"/>
 </segment>
@@ -10982,7 +10982,7 @@ Source: www.kingbright.com</description>
 <label x="363.22" y="-48.26" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="VMCU_EXT" gate="G$1" pin="A"/>
+<pinref part="VEXT" gate="G$1" pin="A"/>
 <wire x1="335.28" y1="-88.9" x2="335.28" y2="-76.2" width="0.1524" layer="91"/>
 <label x="335.28" y="-76.2" size="1.778" layer="95"/>
 <wire x1="314.96" y1="-76.2" x2="335.28" y2="-76.2" width="0.1524" layer="91"/>
@@ -10991,14 +10991,14 @@ Source: www.kingbright.com</description>
 </net>
 <net name="DATA-" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="D-"/>
+<pinref part="USB-IN" gate="G$1" pin="D-"/>
 <wire x1="363.22" y1="-93.98" x2="350.52" y2="-93.98" width="0.1524" layer="91"/>
 <label x="350.52" y="-93.98" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="DATA+" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="D+"/>
+<pinref part="USB-IN" gate="G$1" pin="D+"/>
 <wire x1="363.22" y1="-91.44" x2="350.52" y2="-91.44" width="0.1524" layer="91"/>
 <label x="350.52" y="-91.44" size="1.778" layer="95"/>
 </segment>
