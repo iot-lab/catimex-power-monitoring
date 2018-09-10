@@ -10,6 +10,8 @@ This folder contains the necessary files to replicate the custom board develop f
 
 The board has two different power supply, one for the load (open-node) and other for the main microcontroller (control-node). In the picture below, the micro usb connector of the open node is marked in blue, while the connector for the control node is marked in a red rectangle.
 
+In this version the jumper in 3V3 must be placed to power the control node.
+
 <img src=img/board.png width="500">
 
 
