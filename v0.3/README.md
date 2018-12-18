@@ -27,6 +27,19 @@ If you do not want to connect the control node to a pc, you can connect a batter
 ### Connect the load
 The load or open-node should be connected in the usb connector or in the HOUT header connector. Once plug in you should start to receive the measurement of bus voltage and current used by the board.
 
+### Power Supply and Start-up Considerations
+The board available connectors are:
+* USBCN : USB connector for the control node. If connected the control node is power up and you will be able to receive through serial console.
+* USBON : USB connector for power up and interact with any node connected, in this case the open node.
+* USB : USB port to connect a external node, as in this case the open node
+* HOUT : Header to power an external node (open node) from a header connector instead of using the USB port above.
+* BAT : Header connector to plug any external battery for the open node, instead of use USBON connection.
+* BAT-JST : JST connector to plug in an external battery
+* 3V3_IN : Feed the control node from the on-board voltage regulator and USBCN. A jumper has to be connecting both pins in order to power the control node from USB port. Note: This was build for development purposes.
+
+The pinout configuration is in the image below:
+
+<img src=img/pinout.png width="500">
 
 ## Bugs
 There are some features to fix for the next version of the project:
