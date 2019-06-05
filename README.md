@@ -41,10 +41,12 @@ The pinout configuration is in the image below:
 
 <img src=img/pinout.png width="500">
 
-## Bugs
-There are some features to fix for the next version of the project:
-* Wrong choice of switch ISL43L210: The IC does not support 5V in its input. In the next version is important to choose another multiplexer
-* Change MCU Crystal from 8MHz to 16MHz to be able to reuse the code available from the iot-lab open-nodes
-* Indicate missing silkscreen names
-* Modify usb connector library to improve the adherence to the board
-* Change R19 0 ohm resistor to a space to join digital and analog ground
+## Need features
+From the different test made, there are the following missing features:
+* Add 2 LEDs to the board
+* Add an OFF state for power the open node
+* Match I2C port for INA226 with current in FIT IoTLab and the ALERT interrupt pin
+* Add a battery charger
+* Be able to put a 802.15.4 radio on top
+* Expose same pins as the control node in FIT
+* Be able to measure voltage of battery
